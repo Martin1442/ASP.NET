@@ -9,6 +9,18 @@ namespace SEDC.App.Controllers
 {
     public class HomeController : Controller
     {
+        public List<Pizza> _orderedPizza { get; set; }
+        public HomeController()
+        {
+            Pizza _orderedPizza = new Pizza()
+            {
+                Id = 2,
+                Name = "Peperoni",
+                Size = PizzaSize.Large,
+                Price = 7.0
+            };
+        }
+
         [Route("Begin")]
         public IActionResult Index()
         {
@@ -45,15 +57,8 @@ namespace SEDC.App.Controllers
         public IActionResult Promotion()
         {
             ViewBag.Title = "Today's Promotion:";
-            Pizza orderedPizza = new Pizza()
-            {
-                Id = 2,
-                Name = "Peperoni",
-                Size = PizzaSize.Large,
-                Price = 7.0
-            };
-
-            return View(orderedPizza);
+            
+            return View(_orderedPizza[0]);
         }
     }
 }

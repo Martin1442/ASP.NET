@@ -25,4 +25,3 @@ C:\Users\vitan\OneDrive\Desktop\ASP.NET\SEDC.PizzApp\SEDC.App\obj\Debug\netcorea
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\SEDC.PizzApp\SEDC.App\obj\Debug\netcoreapp2.1\Razor\Views\Order\Index.g.cshtml.cs
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\SEDC.PizzApp\SEDC.App\obj\Debug\netcoreapp2.1\Razor\Views\Order\Details.g.cshtml.cs
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\SEDC.PizzApp\SEDC.App\obj\Debug\netcoreapp2.1\Razor\Views\Home\Promotion.g.cshtml.cs
-C:\Users\vitan\OneDrive\Desktop\ASP.NET\SEDC.PizzApp\SEDC.App\obj\Debug\netcoreapp2.1\SEDC.App.csprojAssemblyReference.cache

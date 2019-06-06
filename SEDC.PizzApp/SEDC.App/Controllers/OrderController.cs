@@ -11,7 +11,7 @@ namespace SEDC.App.Controllers
     
     public class OrderController : Controller
     {
-        private List<Order> _orderDB;
+        private List<Order> _ordersDB;
 
         public OrderController()
         {
@@ -30,7 +30,7 @@ namespace SEDC.App.Controllers
                 Address = "Jill Street",
                 Phone = 08006546345
             };
-            _orderDB = new List<Order>() {
+            _ordersDB = new List<Order>() {
                 new Order()
                 {
                     Id = 1,
@@ -57,15 +57,15 @@ namespace SEDC.App.Controllers
         {
             //ViewData.Add("Title", "Welcome to the Orders page");
             ViewBag.Title = "Welcome to the Orders page";
-            //Order firstOrder = _orderDB[0];
-            //OrdersViewModel ordersViewModel = new OrdersViewModel()
-            //{
-            //    FirstPizza = firstOrder.Pizza.Name,
-            //    NumberOfOrders = _orderDB.Count(),
-            //    FirstPersonName = $"{firstOrder.User.FirstName} {firstOrder.User.LastName}"
-            //};
-            
-            return View(_orderDB);
+            Order firstOrder = _ordersDB[0];
+            OrdersViewModel ordersViewModel = new OrdersViewModel()
+            {
+                FirstPizza = firstOrder.Pizza.Name,
+                NumberOfOrders = _ordersDB.Count,
+                FirstPersonName = $"{firstOrder.User.FirstName} {firstOrder.User.LastName}",
+                Orders = _ordersDB
+            };
+            return View(ordersViewModel);
         }
 
         public IActionResult Details(int? id)
@@ -73,7 +73,7 @@ namespace SEDC.App.Controllers
             //ViewData.Add("Title", "These are your orders:");
             try
             {
-                Order order = _orderDB.Find(x => x.Id == id);
+                Order order = _ordersDB.Find(x => x.Id == id);
                 ViewBag.Title = $"This is order no.{order.Id}";
                 if (order != null) return View(order);
             }

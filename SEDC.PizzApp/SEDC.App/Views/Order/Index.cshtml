@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SEDC.App.Models.DomainModels.Order>
+﻿@model SEDC.App.Models.ViewModels.OrdersViewModel
 @{
     Layout = null;
 }
@@ -12,15 +12,21 @@
 </head>
 <body>
     <h1>@ViewData["Title"]</h1>
-    <p>Orders page!!!</p>
-    @foreach (var orders in Model)
-    {
-        <ul>
-            <li>User Name:@orders.User.FirstName @orders.User.LastName</li>
-            <li>Type of Pizza:@orders.Pizza.Name</li>
-            <li>@orders.Pizza.Price</li>
-        </ul>
-    }
+    <p>This is the orders page!</p>
+    <h3>Our first Pizza ever to be delivered was:</h3>
+    <p>@Model.FirstPizza</p>
+    <h3>Our first customer is:</h3>
+    <p>@Model.FirstPersonName</p>
+    <h3>Total orders since we started delivering:</h3>
+    <p>@Model.NumberOfOrders</p>
+    <h3>All orders:</h3>
+    <ul>
+        @foreach (var orders in Model.Orders)
+        {
+            <li>@orders.User.FirstName - @orders.Pizza.Name (@orders.Pizza.Price$) </li>
+        }
+
+    </ul>
 
 
 </body>
