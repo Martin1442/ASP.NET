@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SEDC.App.Models.DomainModels.Order>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order</title>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+    <p>Orders page!!!</p>
+    @foreach (var orders in Model)
+    {
+        <ul>
+            <li>User Name:@orders.User.FirstName @orders.User.LastName</li>
+            <li>Type of Pizza:@orders.Pizza.Name</li>
+            <li>@orders.Pizza.Price</li>
+        </ul>
+    }
+
+
+</body>
+</html>
