@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDoApplication.Models.DomainModels;
-using Type = ToDoApplication.Models.DomainModels.Type;
+using ToDoApplication.Models.DomainModels.Enums;
+using Type = ToDoApplication.Models.DomainModels.Enums.Type;
 
 namespace ToDoApplication.Controllers
 {

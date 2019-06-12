@@ -2,30 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ToDoApplication.Models.DomainModels.Enums;
+using Type = ToDoApplication.Models.DomainModels.Enums.Type;
 
 namespace ToDoApplication.Models.DomainModels
 {
-    public enum Status
-    {
-        NotDone,
-        InProgress,
-        Done
-    }
-
-    public enum Type
-    {
-        Work,
-        Personal,
-        Hobby
-    }
-
-    public enum Importance
-    {
-        Important = 1,
-        MediumImportance = 2,
-        NotImportant = 3
-    }
-
     public class Tasks
     {
         public string Title { get; set; }

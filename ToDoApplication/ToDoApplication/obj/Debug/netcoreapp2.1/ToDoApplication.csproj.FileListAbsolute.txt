@@ -61,3 +61,4 @@ C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDoApplication\obj\Debu
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.1\ToDoApplication.dll
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.1\ToDoApplication.pdb
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.1\ToDoApplication.csproj.CopyComplete
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.1\ToDoApplication.csprojAssemblyReference.cache
