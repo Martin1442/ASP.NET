@@ -1,0 +1,26 @@
+﻿@model TaskViewModel
+
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Title):
+        "@Html.ValueFor(x => x.Title)"
+    </div>
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Descripton):
+        "@Html.ValueFor(x => x.Descripton)"
+    </div>
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Importance):
+        "@Html.ValueFor(x => x.Importance)"
+    </div>
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Type):
+        "@Html.ValueFor(x => x.Type)"
+    </div>
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Status):
+        "@Html.ValueFor(x => x.Status)"
+    </div>
+
+</div>

@@ -1,0 +1,42 @@
+﻿@model TaskDetailsViewModel
+
+<h3>Change Details Of Your Task</h3><br>
+@using (Html.BeginForm("Details", "Task", FormMethod.Post))
+{
+
+    @Html.Hidden($"{Model.Id}", Model.Id)
+    @Html.Hidden($"{Model.UserId}", Model.UserId)
+    @Html.Hidden($"{Model.Title}", Model.Title)
+    @Html.Hidden($"{Model.Descripton}", Model.Descripton)
+    @Html.Hidden($"{Model.Type}", Model.Type)
+    @Html.Hidden($"{Model.Importance}", Model.Importance)
+    @Html.Hidden($"{Model.Status}", Model.Status)
+
+    <div class="row">
+
+        <div class="col-md-12 cols">
+            @Html.Label(expression: "task.Title"):
+            @Html.TextBox($"{Model.Title}", Model.Title)
+        </div>
+        <div class="col-md-12 cols">
+            @Html.Label(expression: "task.Description"):
+            @Html.TextBox($"{Model.Descripton}", Model.Descripton)
+        </div>
+        <div class="col-md-12 cols">
+            @Html.Label(expression: "task.Importance"):
+            @Html.DropDownList($"{Model.Importance}", Html.GetEnumSelectList(Model.Importance.GetType()))
+        </div>
+        <div class="col-md-12 cols">
+            @Html.Label(expression: "task.Type"):
+            @Html.DropDownList($"{Model.Type}", Html.GetEnumSelectList(Model.Type.GetType()))
+        </div>
+        <div class="col-md-12 cols">
+            @Html.Label(expression: "task.Status"):
+            @Html.DropDownList($"{Model.Status}", Html.GetEnumSelectList(Model.Status.GetType()))
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-success" type="submit"> Submit Changes</button>
+        </div>
+    </div>
+
+}

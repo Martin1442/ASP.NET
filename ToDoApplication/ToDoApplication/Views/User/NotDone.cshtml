@@ -1,23 +1,13 @@
-﻿@model User
+﻿
 @{
-    var count = 1;
+    
     ViewData["Title"] = "NotDone";
 }
 
 <h2> Your task is not done yet! </h2>
 
-<table><b>Tasks Not Done:</b>
-    @for (int i = 0; i < Model.ToDoTasks.Count(); i++)
-    {
-        
-        if (Model.ToDoTasks[i].Status != Status.Done)
-        {
-            <tr>
-                <td>@count.@Model.ToDoTasks[i].Title</td>
-            </tr>
-            count++;
-        }
-    }
+<table>Tasks Not Done:
+    
 
 </table>
 

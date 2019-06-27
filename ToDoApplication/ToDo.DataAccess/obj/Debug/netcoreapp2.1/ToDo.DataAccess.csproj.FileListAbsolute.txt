@@ -1,0 +1,12 @@
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.deps.json
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.dll
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.pdb
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.Domain.dll
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.Domain.pdb
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.csprojAssemblyReference.cache
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.AssemblyInfoInputs.cache
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.AssemblyInfo.cs
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.csproj.CopyComplete
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.dll
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\obj\Debug\netcoreapp2.1\ToDo.DataAccess.pdb

@@ -1,0 +1,8 @@
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\bin\Debug\netcoreapp2.1\ToDo.Domain.deps.json
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\bin\Debug\netcoreapp2.1\ToDo.Domain.dll
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\bin\Debug\netcoreapp2.1\ToDo.Domain.pdb
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.csproj.CoreCompileInputs.cache
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.AssemblyInfoInputs.cache
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.AssemblyInfo.cs
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.dll
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.pdb

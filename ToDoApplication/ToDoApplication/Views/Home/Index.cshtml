@@ -1,3 +1,37 @@
-﻿@{
+﻿@model HomeViewModel
+@{
+    int count = 1;
     ViewData["Title"] = "Home Page";
+
 }
+<h2>Tasks that are not done:</h2>
+
+<br>
+
+@Html.ActionLink("Add Task", "Index", "Task","", new { @class = "btn btn-danger" })
+
+<br><br>
+
+@foreach (var item in Model.UndoneTasks)
+{
+    <div class="row" style="border:2px solid black">
+        <div class="col-md-2 cols">
+            Task @count.
+        </div>
+        <div class="col-md-2 cols">
+            Title: "@item.Title"
+        </div>
+        <div class="col-md-4 cols">
+            Description: "@item.Descripton"
+        </div>
+        <div class="col-md-2 cols">
+            Importance: "@item.Importance.ToString()"
+        </div>
+        <div class="col-md-2 cols">
+            Type: "@item.Type.ToString()"
+        </div>
+    </div>
+    <br>
+    count += 1;
+}
+

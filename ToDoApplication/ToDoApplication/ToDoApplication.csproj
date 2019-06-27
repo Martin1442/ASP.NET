@@ -5,16 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\ViewModels\**" />
-    <Content Remove="Models\ViewModels\**" />
-    <EmbeddedResource Remove="Models\ViewModels\**" />
-    <None Remove="Models\ViewModels\**" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <ProjectReference Include="..\ToDo.Services\ToDo.Services.csproj" />
   </ItemGroup>
 
 </Project>

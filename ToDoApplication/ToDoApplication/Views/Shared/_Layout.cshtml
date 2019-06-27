@@ -4,22 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title - ToDoApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .cols{
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Tasks Not Done", "NotDone", "User")</li>
-                <li>@Html.ActionLink("Tasks In Progress", "InProgress", "User")</li>
-                <li>@Html.ActionLink("Tasks Done", "Done", "User")</li>
-                <li>@Html.ActionLink("User Statistics", "Statistics", "User")</li>
+                <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li style="float:right">@Html.ActionLink("Done Tasks", "Done", "Task")</li>
+                <li style="float:right">@Html.ActionLink("Not Done Tasks", "NotDone", "Task")</li>
+                <li style="float:right">@Html.ActionLink("Tasks in Progress", "InProgress", "Task")</li>
+                <li style="float:right">@Html.ActionLink("Tasks Details", "Details", "Task")</li>
             </ul>
+            
         </nav>
     </header>
 
-    <h2>@ViewBag.Title</h2>
     <table>
         @RenderBody()
     </table>
@@ -30,6 +40,5 @@
         <p>&copy;ToDoApp</p>
     </footer>
     <script src="~/js/site.js"></script>
-
 </body>
 </html>

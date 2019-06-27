@@ -1,0 +1,10 @@
+﻿@model TasksViewModel
+
+@{
+    ViewBag.Title = "Not Done Tasks";
+}
+<h2>Tasks:</h2>
+@foreach (var task in Model.Tasks)
+{
+    @Html.Partial("_Tasks", task)
+}

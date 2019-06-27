@@ -1,0 +1,41 @@
+﻿@model TaskViewModel
+
+<h3>Create Task:</h3> <br>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(x => x.Title)
+            @Html.TextBoxFor(x => x.Title)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(x => x.Descripton)
+            @Html.TextBoxFor(x => x.Descripton)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(x => x.Status)
+            @Html.DropDownListFor(x => x.Status, Html.GetEnumSelectList(Model.Status.GetType()))
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(x => x.Importance)
+            @Html.DropDownListFor(x => x.Importance, Html.GetEnumSelectList(Model.Importance.GetType()))
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(x => x.Type)
+            @Html.DropDownListFor(x => x.Type, Html.GetEnumSelectList(Model.Type.GetType()))
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-danger" type="submit">Create Task!</button>
+        </div>
+    </div>
+}

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ToDo.Services.Helpers;
+using ToDo.Services.Services;
 
 namespace ToDoApplication
 {
@@ -31,6 +33,11 @@ namespace ToDoApplication
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserTasksService, UserTasksService>();
+            services.AddTransient<ITasksService, TasksService>();
+
+            DIRepositoryModule.RegisterRepositories(services);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

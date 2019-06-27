@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "ToDo.DataAccess/1.0.0": {
+        "dependencies": {
+          "ToDo.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ToDo.DataAccess.dll": {}
+        }
+      },
+      "ToDo.Domain/1.0.0": {
+        "runtime": {
+          "ToDo.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ToDo.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ToDo.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
