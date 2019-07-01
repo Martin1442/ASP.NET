@@ -17,5 +17,6 @@ namespace ToDoApplication.Models
         public Status Status { get; set; }
         public Type Type { get; set; }
         public Importance Importance { get; set; }
+        public List<SubTask> SubTasks { get; set; }
     }
 }

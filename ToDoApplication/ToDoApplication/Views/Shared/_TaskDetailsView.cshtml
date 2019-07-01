@@ -4,39 +4,51 @@
 @using (Html.BeginForm("Details", "Task", FormMethod.Post))
 {
 
-    @Html.Hidden($"{Model.Id}", Model.Id)
-    @Html.Hidden($"{Model.UserId}", Model.UserId)
-    @Html.Hidden($"{Model.Title}", Model.Title)
-    @Html.Hidden($"{Model.Descripton}", Model.Descripton)
-    @Html.Hidden($"{Model.Type}", Model.Type)
-    @Html.Hidden($"{Model.Importance}", Model.Importance)
-    @Html.Hidden($"{Model.Status}", Model.Status)
-
+    @Html.Hidden($"Model.Id", Model.Id, new { Model.Id })
+    @Html.Hidden($"Model.UserId", Model.UserId, new { Model.UserId })
     <div class="row">
-
         <div class="col-md-12 cols">
             @Html.Label(expression: "task.Title"):
-            @Html.TextBox($"{Model.Title}", Model.Title)
+            @Html.TextBox($"Model.Title", Model.Title, new { Model.Title })
         </div>
         <div class="col-md-12 cols">
             @Html.Label(expression: "task.Description"):
-            @Html.TextBox($"{Model.Descripton}", Model.Descripton)
+            @Html.TextBox($"Model.Descripton", Model.Descripton, new { Model.Descripton })
         </div>
         <div class="col-md-12 cols">
             @Html.Label(expression: "task.Importance"):
-            @Html.DropDownList($"{Model.Importance}", Html.GetEnumSelectList(Model.Importance.GetType()))
+            @Html.DropDownList($"Model.Importance", Html.GetEnumSelectList(Model.Importance.GetType()), new { Model.Importance, @class = "dropdown-toggle btn btn-info" })
         </div>
         <div class="col-md-12 cols">
             @Html.Label(expression: "task.Type"):
-            @Html.DropDownList($"{Model.Type}", Html.GetEnumSelectList(Model.Type.GetType()))
+            @Html.DropDownList($"Model.Type", Html.GetEnumSelectList(Model.Type.GetType()), new { Model.Type, @class = "dropdown-toggle btn btn btn-info" })
         </div>
         <div class="col-md-12 cols">
             @Html.Label(expression: "task.Status"):
-            @Html.DropDownList($"{Model.Status}", Html.GetEnumSelectList(Model.Status.GetType()))
+            @Html.DropDownList($"Model.Status", Html.GetEnumSelectList(Model.Status.GetType()), new { Model.Status, @class = "dropdown-toggle btn btn-info" })
         </div>
         <div class="col-md-12">
             <button class="btn btn-success" type="submit"> Submit Changes</button>
         </div>
     </div>
 
+}
+<h3>SubTasks:</h3>
+
+@foreach (var subtask in Model.SubTasks)
+{
+    <div class="row" style=" border:2px solid black">
+        <div class="col-md-2">
+            @Html.Label($"subtask.Title"):
+            @Html.Value(null, subtask.Title)
+        </div>
+        <div class="col-md-2">
+            @Html.Label($"subtask.Description"):
+            @Html.Value(null, subtask.Description)
+        </div>
+        <div class="col-md-2">
+            @Html.Label($"subtask.Status"):
+            @Html.Value(null, subtask.Status.ToString())
+        </div>
+    </div>
 }

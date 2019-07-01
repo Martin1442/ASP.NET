@@ -20,6 +20,46 @@ namespace ToDo.DataAccess
         {
             SubTasks = new List<SubTask>
             {
+                new SubTask
+                {
+                    Id = 1,
+                    TaskId = 1,
+                    Title = "Nap",
+                    Description = "1h Nap",
+                    Status = false
+                },
+                new SubTask
+                {
+                    Id = 2,
+                    TaskId = 3,
+                    Title = "TV",
+                    Description = "Watching Basketball",
+                    Status = true
+                },
+                new SubTask
+                {
+                    Id = 3,
+                    TaskId = 2,
+                    Title = "PC",
+                    Description = "Playing Fortnite",
+                    Status = false
+                },
+                new SubTask
+                {
+                    Id = 4,
+                    TaskId = 4,
+                    Title = "PC",
+                    Description = "Playing DOTA",
+                    Status = false
+                },
+                new SubTask
+                {
+                    Id = 5,
+                    TaskId = 5,
+                    Title = "Youtiube",
+                    Description = "Listening Music",
+                    Status = false
+                }
 
             };
 
@@ -33,7 +73,7 @@ namespace ToDo.DataAccess
                     Importance = Importance.Medium,
                     Status = Status.NotDone,
                     Type = Type.Hobby,
-
+                    SubTasks = new List<SubTask>(){SubTasks[0]}
                 },
                 new Task
                 {
@@ -43,6 +83,7 @@ namespace ToDo.DataAccess
                     Importance = Importance.Medium,
                     Status = Status.Done,
                     Type = Type.Personal,
+                    SubTasks = new List<SubTask>(){SubTasks[1]}
                 },
                 new Task
                 {
@@ -51,7 +92,8 @@ namespace ToDo.DataAccess
                     Descripton = "Doing Homework",
                     Importance = Importance.Important,
                     Status = Status.InProgress,
-                    Type = Type.Personal
+                    Type = Type.Personal,
+                    SubTasks = new List<SubTask>(){SubTasks[2]}
                 },
                 new Task
                 {
@@ -61,7 +103,7 @@ namespace ToDo.DataAccess
                     Importance = Importance.Important,
                     Status = Status.Done,
                     Type = Type.Hobby,
-
+                    SubTasks = new List<SubTask>(){SubTasks[3]}
                 },
                 new Task
                 {
@@ -71,6 +113,7 @@ namespace ToDo.DataAccess
                     Importance = Importance.Important,
                     Status = Status.Done,
                     Type = Type.Personal,
+                    SubTasks = new List<SubTask>(){SubTasks[4]}
                 },
                 new Task
                 {
@@ -79,7 +122,8 @@ namespace ToDo.DataAccess
                     Descripton = "C# Homework",
                     Importance = Importance.Important,
                     Status = Status.InProgress,
-                    Type = Type.Personal
+                    Type = Type.Personal,
+                    SubTasks = new List<SubTask>(){ }
                 },
                 new Task
                 {
@@ -89,7 +133,7 @@ namespace ToDo.DataAccess
                     Importance = Importance.NotImportant,
                     Status = Status.NotDone,
                     Type = Type.Personal,
-
+                    SubTasks = new List<SubTask>(){ }
                 },
                 new Task
                 {
@@ -99,6 +143,7 @@ namespace ToDo.DataAccess
                     Importance = Importance.Medium,
                     Status = Status.NotDone,
                     Type = Type.Hobby,
+                    SubTasks = new List<SubTask>(){ }
                 },
                 new Task
                 {
@@ -107,7 +152,8 @@ namespace ToDo.DataAccess
                     Descripton = "Going on class",
                     Importance = Importance.Important,
                     Status = Status.InProgress,
-                    Type = Type.Personal
+                    Type = Type.Personal,
+                    SubTasks = new List<SubTask>(){ }
                 }
             };
 
@@ -120,7 +166,7 @@ namespace ToDo.DataAccess
                     LastName = "Doe",
                     Age = 99,
                     AverageFreeTime = 9,
-                    ToDoTasks = new List<Task>(){Tasks[0], Tasks[3]}
+                    ToDoTasks = new List<Task>(){Tasks[0], Tasks[3], Tasks[4], Tasks[6], Tasks[8]}
                 },
                 new User()
                 {
@@ -129,13 +175,13 @@ namespace ToDo.DataAccess
                     LastName = "Doe",
                     Age = 99,
                     AverageFreeTime = 9,
-                    ToDoTasks = new List<Task>(){Tasks[1], Tasks[2]}
+                    ToDoTasks = new List<Task>(){Tasks[1], Tasks[2], Tasks[5], Tasks[7]}
                 },
             };
 
             TasksId = 9;
             UsersId = 2;
-            SubTasksId = 0;
+            SubTasksId = 5;
         }
     }
 }

@@ -131,7 +131,8 @@ namespace ToDoApplication.Controllers
                     Descripton = gotById.Descripton,
                     Importance = gotById.Importance,
                     Type = gotById.Type,
-                    Status = gotById.Status
+                    Status = gotById.Status,
+                    SubTasks = gotById.SubTasks
                 };
                 return View("_TaskDetailsView", modelId);
             };
@@ -148,7 +149,8 @@ namespace ToDoApplication.Controllers
                     Descripton = task.Descripton,
                     Importance = task.Importance,
                     Status = task.Status,
-                    Type = task.Type
+                    Type = task.Type,
+                    SubTasks = task.SubTasks
                 };
                 tasksWithDetails.Add(thisTask);
             }

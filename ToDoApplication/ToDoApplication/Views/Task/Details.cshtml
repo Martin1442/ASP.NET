@@ -1,22 +1,26 @@
 ﻿@model TasksDetailsViewModel
-
+@{ 
+    ViewBag.Title = "Task Details";
+    int count = 1;
+}
 <h2>Details</h2>
 
 @foreach (var task in Model.Details)
 {
     @Html.Hidden($"{task.Id}", task.Id)
     @Html.Hidden($"{task.UserId}", task.UserId)
+    <h4>Taks @count.</h4>
     <div class="row" style="border:2px solid black">
 
         <div class="col-md-2 cols">
             @Html.Label(expression: "task.Title"):
             @Html.Value(null, $"{task.Title}")
         </div>
-        <div class="col-md-3 cols">
+        <div class="col-md-2 cols">
             @Html.Label(expression: "task.Description"):
             @Html.Value(null, $"{task.Descripton}")
         </div>
-        <div class="col-md-3 cols">
+        <div class="col-md-2 cols">
             @Html.Label(expression: "task.Importance"):
             @Html.Value(null,$"{task.Importance}")
         </div>
@@ -24,14 +28,16 @@
             @Html.Label(expression: "task.Type"):
             @Html.Value(null, $"{task.Type}")
         </div>
-        <div class="col-md-1 ">
+        <div class="col-md-2 cols">
             @Html.Label(expression: "task.Status"):
             "@Html.Value(null,$"{task.Status}")"
         </div>
-        <div class="col-md-1">
-            @Html.ActionLink("Change Details", "Details", "Task", new {id = task.Id , @class="btn btn-danger"})
+        <div class="col-md-2">
+            @Html.ActionLink("Change Details", "Details", "Task", new { id = task.Id }, new { @class = "btn btn-danger" })
         </div>
     </div>
+    count += 1;
+    <br>
 }
 
 
