@@ -4,16 +4,17 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.DataAccess.Repositories;
 using ToDo.Domain.Models;
+using ToDo.Services.Services;
 
 namespace ToDoApplication.Controllers
 {
     [Route("User/[action]")]
     public class UserController : Controller
     {
-        IRepository<Task> _taskRepository;
-        IRepository<User> _userRepository;
+        private ITasksService _taskRepository;
+        private IUserService _userRepository;
 
-        public UserController(IRepository<Task> taskRepository, IRepository<User> userRepository)
+        public UserController(ITasksService taskRepository, IUserService userRepository)
         {
             _taskRepository = taskRepository;
             _userRepository = userRepository;

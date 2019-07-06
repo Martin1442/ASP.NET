@@ -53,5 +53,10 @@ namespace ToDo.Services.Services
         {
             _subTaskRepository.Create(subTask);
         }
+
+        public void UpdateTask(Task task)
+        {
+            _taskRepository.Update(task);
+        }
     }
 }

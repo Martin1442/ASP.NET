@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using ToDo.Domain.Models;
 
@@ -6,41 +7,49 @@ namespace ToDo.DataAccess.Repositories.CacheRepositories
 {
     public class UserRepository : IRepository<User>
     {
+        private ToDoDbContex _toDoDbContex;
+        public UserRepository(ToDoDbContex toDoDbContex)
+        {
+            _toDoDbContex = toDoDbContex;
+        }
         public int Create(User entity)
         {
-            CacheDb.UsersId++;
-            entity.Id = CacheDb.UsersId;
-            CacheDb.Users.Add(entity);
-
+            if (entity != null)
+            {
+                _toDoDbContex.Users.Add(entity);
+                _toDoDbContex.SaveChanges();
+            }
+            
             return entity.Id;
         }
 
         public void Delete(int id)
         {
-            User user = CacheDb.Users.FirstOrDefault(x => x.Id == id);
+            User user = _toDoDbContex.Users.Include(x => x.ToDoTasks).SingleOrDefault(x => x.Id == id);
             if (user != null)
             {
-                CacheDb.Users.Remove(user);
+                _toDoDbContex.Users.Remove(user);
+                _toDoDbContex.SaveChanges();
             }
         }
 
         public List<User> GetAll()
         {
-            return CacheDb.Users;
+            return _toDoDbContex.Users.Include(x => x.ToDoTasks).ToList();
         }
 
         public User GetById(int id)
         {
-            return CacheDb.Users.FirstOrDefault(x => x.Id == id);
+            return _toDoDbContex.Users.SingleOrDefault(x => x.Id == id);
         }
 
         public void Update(User entity)
         {
-            User user = CacheDb.Users.FirstOrDefault(x => x.Id == entity.Id);
+            User user = _toDoDbContex.Users.SingleOrDefault(x => x.Id == entity.Id);
             if (user != null)
             {
-                int index = CacheDb.Users.IndexOf(user);
-                CacheDb.Users[index] = entity;
+                _toDoDbContex.Users.Update(entity);
+                _toDoDbContex.SaveChanges();
             }
         }
     }

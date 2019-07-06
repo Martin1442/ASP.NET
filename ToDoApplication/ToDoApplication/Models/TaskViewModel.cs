@@ -9,6 +9,7 @@ namespace ToDoApplication.Models
 {
     public class TaskViewModel
     {
+        public int UserId { get; set; }
         public string Title { get; set; }
         public string Descripton { get; set; }
         public Status Status { get; set; }

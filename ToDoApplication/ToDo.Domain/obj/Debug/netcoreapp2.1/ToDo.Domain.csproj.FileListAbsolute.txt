@@ -6,3 +6,4 @@ C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\ne
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.AssemblyInfo.cs
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.dll
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.pdb
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.Domain\obj\Debug\netcoreapp2.1\ToDo.Domain.csprojAssemblyReference.cache

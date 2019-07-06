@@ -10,6 +10,7 @@ namespace ToDo.Services.Services
         List<Task> GetAllTasks();
         Task GetTaskById(int id);
         int GetTaskCount();
+        void UpdateTask(Task task);
         void CreateNewTask(Task task);
         List<SubTask> GetAllSubTasks();
         SubTask GetSubTaskById(int id);

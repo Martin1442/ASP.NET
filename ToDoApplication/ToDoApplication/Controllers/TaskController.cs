@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.DataAccess.Repositories;
+using ToDo.DataAccess.Repositories.CacheRepositories;
 using ToDo.Domain.Enums;
 using ToDo.Domain.Models;
+using ToDo.Services.Services;
 using ToDoApplication.Models;
 
 namespace ToDoApplication.Controllers
 {
     public class TaskController : Controller
     {
-        IRepository<Task> _taskRepository;
+        private IUserService _userRepository;
+        private ITasksService _taskRepository;
 
-        public TaskController(IRepository<Task> taskRepository)
+        public TaskController(ITasksService taskRepository, IUserService userRepository)
         {
             _taskRepository = taskRepository;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
@@ -30,15 +34,17 @@ namespace ToDoApplication.Controllers
         {
             if(!string.IsNullOrEmpty(model.Title) && !string.IsNullOrEmpty(model.Descripton))
             {
+
                 Task taskToAdd = new Task()
                 {
+                    UserId = model.UserId,
                     Title = model.Title,
                     Descripton = model.Descripton,
                     Status = model.Status,
                     Importance = model.Importance,
                     Type = model.Type
                 };
-                _taskRepository.Create(taskToAdd);
+                _taskRepository.CreateNewTask(taskToAdd);
                 
             }
             return RedirectToAction("Index", "Home");
@@ -46,7 +52,7 @@ namespace ToDoApplication.Controllers
         
         public IActionResult InProgress()
         {
-            var allTasks = _taskRepository.GetAll();
+            var allTasks = _taskRepository.GetAllTasks();
             List<TaskViewModel> inProgress = new List<TaskViewModel>();
             foreach (var task in allTasks)
             {
@@ -71,7 +77,7 @@ namespace ToDoApplication.Controllers
 
         public IActionResult NotDone()
         {
-            var allTasks = _taskRepository.GetAll();
+            var allTasks = _taskRepository.GetAllTasks();
             List<TaskViewModel> notDone = new List<TaskViewModel>();
             foreach (var task in allTasks)
             {
@@ -96,7 +102,7 @@ namespace ToDoApplication.Controllers
 
         public IActionResult Done()
         {
-            var allTasks = _taskRepository.GetAll();
+            var allTasks = _taskRepository.GetAllTasks();
             List<TaskViewModel> done = new List<TaskViewModel>();
             foreach (var task in allTasks)
             {
@@ -122,7 +128,7 @@ namespace ToDoApplication.Controllers
         {
             if (id > 0)
             {
-                Task gotById = _taskRepository.GetById(id);
+                Task gotById = _taskRepository.GetTaskById(id);
                 TaskDetailsViewModel modelId = new TaskDetailsViewModel()
                 {
                     Id = gotById.Id,
@@ -137,7 +143,7 @@ namespace ToDoApplication.Controllers
                 return View("_TaskDetailsView", modelId);
             };
 
-            var allTasks = _taskRepository.GetAll();
+            var allTasks = _taskRepository.GetAllTasks();
             List<TaskDetailsViewModel> tasksWithDetails = new List<TaskDetailsViewModel>();
             foreach (var task in allTasks)
             {
@@ -172,9 +178,10 @@ namespace ToDoApplication.Controllers
                     Descripton = model.Descripton,
                     Status = model.Status,
                     Importance = model.Importance,
-                    Type = model.Type
+                    Type = model.Type,
+                    SubTasks = model.SubTasks
                 };
-                _taskRepository.Update(toUpdate);
+                _taskRepository.UpdateTask(toUpdate);
             }
             
             return RedirectToAction("Index", "Home");

@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ToDo.DataAccess;
 using ToDo.Services.Helpers;
 using ToDo.Services.Services;
 
@@ -19,6 +20,7 @@ namespace ToDoApplication
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -40,6 +42,7 @@ namespace ToDoApplication
             DIRepositoryModule.RegisterRepositories(services);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<ToDoDbContex>(x => x.UseSqlServer("Server =.\\MARTIN; Database = ToDoDb; Trusted_Connection = true;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,6 @@
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.deps.json
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.runtimeconfig.json
+C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.runtimeconfig.dev.json
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.dll
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.DataAccess.pdb
 C:\Users\vitan\OneDrive\Desktop\ASP.NET\ToDoApplication\ToDo.DataAccess\bin\Debug\netcoreapp2.1\ToDo.Domain.dll

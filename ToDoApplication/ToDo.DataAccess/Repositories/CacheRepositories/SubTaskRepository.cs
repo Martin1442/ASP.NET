@@ -8,41 +8,46 @@ namespace ToDo.DataAccess.Repositories.CacheRepositories
 {
     public class SubTaskRepository : IRepository<SubTask>
     {
+        private ToDoDbContex _toDoDbContex;
+
+        public SubTaskRepository(ToDoDbContex toDoDbContex)
+        {
+            _toDoDbContex = toDoDbContex;
+        }
+
         public int Create(SubTask entity)
         {
-            CacheDb.SubTasksId++;
-            entity.Id = CacheDb.SubTasksId;
-            CacheDb.SubTasks.Add(entity);
+            _toDoDbContex.SubTasks.Add(entity);
 
             return entity.Id;
         }
 
         public void Delete(int id)
         {
-            SubTask subTask = CacheDb.SubTasks.FirstOrDefault(x => x.Id == id);
+            SubTask subTask = _toDoDbContex.SubTasks.SingleOrDefault(x => x.Id == id);
             if(subTask != null)
             {
-                CacheDb.SubTasks.Remove(subTask);
+                _toDoDbContex.Remove(subTask);
             }
         }
 
         public List<SubTask> GetAll()
         {
-            return CacheDb.SubTasks;
+            return _toDoDbContex.SubTasks.ToList();
         }
 
         public SubTask GetById(int id)
         {
-            return CacheDb.SubTasks.FirstOrDefault(x => x.Id == id);
+            return _toDoDbContex.SubTasks.SingleOrDefault(x => x.Id == id);
         }
 
         public void Update(SubTask entity)
         {
-            SubTask subTask = CacheDb.SubTasks.FirstOrDefault(x => x.Id == entity.Id);
+            SubTask subTask = _toDoDbContex.SubTasks.FirstOrDefault(x => x.Id == entity.Id);
             if(subTask != null)
             {
-                int index = CacheDb.SubTasks.IndexOf(subTask);
-                CacheDb.SubTasks[index] = entity;
+                _toDoDbContex.SubTasks.Update(entity);
+                _toDoDbContex.SaveChanges();
             }
         }
     }
